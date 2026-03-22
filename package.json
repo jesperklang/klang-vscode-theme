@@ -1,0 +1,46 @@
+{
+  "name": "klang-theme",
+  "displayName": "Klang Theme",
+  "description": "A high contrast dark theme with neon pink accents.",
+  "version": "0.1.0",
+  "publisher": "Jesper Klang",
+  "author": {
+    "name": "Jesper Klang",
+    "email": "jesper@klang.dev"
+  },
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "preview": true,
+  "keywords": [
+    "theme",
+    "color theme",
+    "dark theme",
+    "black",
+    "high contrast",
+    "neon",
+    "pink"
+  ],
+  "icon": "images/icon.png",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Klang Theme",
+        "uiTheme": "hc-black",
+        "path": "./themes/-klang-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jesperklang/klang-vscode-theme.git"
+  },
+  "homepage": "https://github.com/jesperklang/klang-vscode-theme",
+  "bugs": {
+    "url": "https://github.com/jesperklang/klang-vscode-theme/issues"
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}
