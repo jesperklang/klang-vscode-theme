@@ -1015,7 +1015,6 @@
     },
     {
       "scope": [
-        "variable.other.object",
         "punctuation.definition.tag",
         "punctuation.separator.key-value.html",
         "entity.name.tag",
