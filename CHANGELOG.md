@@ -7,6 +7,5 @@
   - Known untested colors:
     - TODO: Test Notebook
     - TODO: Test Debug
-    - TODO: Test scmGraph
     - TODO: Test Graphs
     - TODO: Test commandCenter
