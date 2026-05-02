@@ -1,3 +1,4 @@
-.vscode/settings.json
 .vscode-test/**
-vsc-extension-quickstart.md
+node_modules
+*.vsix
+package-lock.json
