@@ -2,7 +2,7 @@
 
 ## What This Project Is
 
-This repository is a **VS Code color theme extension** called **Klang Theme**. It is a high-contrast dark theme (`hc-black`) with neon pink (`#ff55c8`) as the primary accent color, cyan (`#00f0ff`) for links/info/types, green (`#05ffa1`) for additions/success/variables, and red (`#ff2e63`) for errors.
+This repository is a **VS Code color theme extension** called **Klang Theme**. It is a high-contrast dark theme (`hc-black`) with neon pink (`#ff55c8`) as the primary accent color, cyan (`#00f0ff`).
 
 ## Repository Structure
 
