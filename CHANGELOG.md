@@ -3,7 +3,7 @@
 ## [Unreleased]
 - 
 
-## [0.2.0-beta] 2026-04-06
+## [0.2.0-beta] 2026-05-03
 - Now in Beta!
 - Minor color improvements for public beta release.
 - New script for local installation and testing: `npm run install-locally` and `npm run install-locally:insider`.
