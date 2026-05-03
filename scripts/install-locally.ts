@@ -28,7 +28,8 @@ async function main() {
   const packagePublisher = readStringField(manifest, "publisher");
   const packageVersion = readStringField(manifest, "version");
   const packageFolderPrefix = `${packagePublisher}.${packageName}`;
-  const destination = join(extensionsRoot, `${packageFolderPrefix}-${packageVersion}`);
+  const packageFolderName = `${packageFolderPrefix}-${packageVersion}`;
+  const destination = join(extensionsRoot, packageFolderName);
 
   await mkdir(extensionsRoot, { recursive: true });
   await removeExistingPackageFolders(packageFolderPrefix);
@@ -37,11 +38,15 @@ async function main() {
     filter: (source: string) => !shouldExclude(source),
   });
 
-  console.log(`Installed ${packageName} ${packageVersion}`);
-  console.log(`Target: ${installTarget}`);
-  console.log(`Source: ${repositoryRoot}`);
+  const targetMap = {
+    stable: "VS Code Stable",
+    insider: "VS Code Insider",
+  }
+
+  console.log(`\x1b[32mInstalled ${packageFolderName}\x1b[0m`);
+  console.log(`Target: ${targetMap[installTarget]}`);
   console.log(`Destination: ${destination}`);
-  console.log("Reload or restart VS Code to pick up the local extension.");
+  console.log("\x1b[33mReload or restart VS Code to pick up the local extension.\x1b[0m");
 }
 
 function getInstallTarget() {
@@ -89,7 +94,7 @@ async function removeExistingPackageFolders(packageFolderPrefix: string) {
 
   for (const folder of matchingFolders) {
     const folderPath = join(extensionsRoot, folder.name);
-    console.log(`Removing existing folder: ${folderPath}`);
+    console.log(`Existing folder will be replaced: ${folderPath}`);
     await rm(folderPath, { recursive: true, force: true });
   }
 }
