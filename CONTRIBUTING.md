@@ -59,18 +59,15 @@ Use the existing launch configuration:
 
 > :bulb: Tip: Use the code samples in `code-samples/` to quickly test specific UI elements on popular languages.
 
-### 5. Validate the result
-
-Before opening a pull request, verify that:
-- Building the VSIX package works without errors by running:
+### 5. Prepare for Pull Request
+1. Make sure your branch is up to date with the latest changes from `main`.
+2. Build a VSIX package and make sure there are no errors by running:
 ```sh
 npm run vsix
 ```
-- `themes/klang-theme.json` is a valid JSON.
-- Color values are valid hex colors.
-- The theme remains high-contrast compatible, and follows the [Theme Colors](#theme-colors) below.
+- Add your changes to the [Unreleased] section in [`CHANGELOG.md`](CHANGELOG.md) with a clear description. Consider giving yourself credit for the contribution by adding your GitHub username in parentheses after the description, e.g. `- Improved color contrast for comments (by jesperklang)`.
 
-> :bulb: Tip: You can check for color blindness using the built-in Developer Tools in VS Code. Open Developer Tools (`Help > Toggle Developer Tools`), then open the More tools menu (three-dot icon in the DevTools toolbar) > Select Rendering > Scroll to the Emulate vision deficiencies dropdown and select the desired condition.
+> :bulb: Tip: Bonus points if you can check for color blindness. You can do this using the built-in Developer Tools in VS Code. Open Developer Tools (`Help > Toggle Developer Tools`), then open the More tools menu (three-dot icon in the DevTools toolbar) > Select Rendering > Scroll to the Emulate vision deficiencies dropdown and select the desired condition.
 
 ### 6. Commit and open a Pull Request
 1. Commit your changes with a descriptive message. If you do many changes in one branch, consider breaking them into multiple commits with clear messages.
