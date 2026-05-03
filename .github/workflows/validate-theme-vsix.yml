@@ -1,0 +1,52 @@
+name: Validate Theme VSIX
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+permissions:
+  contents: read
+
+jobs:
+  validate-vsix:
+    name: Validate VSIX package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for theme changes
+        id: theme-changes
+        shell: bash
+        run: |
+          if git diff --quiet "${{ github.event.pull_request.base.sha }}...HEAD" -- themes/klang-theme.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            status=$?
+
+            if [[ "$status" -eq 1 ]]; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+            else
+              exit "$status"
+            fi
+          fi
+
+      - name: Set up Node.js
+        if: steps.theme-changes.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        if: steps.theme-changes.outputs.changed == 'true'
+        run: npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Run VSIX script
+        if: steps.theme-changes.outputs.changed == 'true'
+        run: npm run vsix
