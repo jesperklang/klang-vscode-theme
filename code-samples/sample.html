@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Klang Theme HTML Sample</title>
+    <link rel="stylesheet" href="./sample.css" />
+  </head>
+  <body data-theme="klang">
+    <!-- Semantic markup, attributes, entities, and embedded script/style hooks -->
+    <header class="site-header" aria-label="Primary">
+      <nav>
+        <a href="#dashboard">Dashboard</a>
+        <button type="button" disabled>Syncing...</button>
+      </nav>
+    </header>
+
+    <main id="dashboard">
+      <section aria-labelledby="status-title">
+        <h1 id="status-title">Theme Sample &amp; Status</h1>
+        <p>Use this document to inspect tags, attributes, text, entities, and forms.</p>
+
+        <form action="/preview" method="post">
+          <label for="accent">Accent color</label>
+          <input id="accent" name="accent" type="color" value="#ff55c8" />
+          <input name="query" type="search" placeholder="Search samples" required />
+          <button type="submit">Preview</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module">
+      const form = document.querySelector("form");
+      form?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.info("Preview requested", new FormData(form));
+      });
+    </script>
+  </body>
+</html>

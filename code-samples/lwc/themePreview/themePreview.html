@@ -1,0 +1,35 @@
+<template>
+  <!-- LWC sample: directives, slots, conditional rendering, iteration, and base components -->
+  <lightning-card title="Theme Preview" icon-name="custom:custom14">
+    <div class="preview slds-p-around_medium" data-status={statusVariant}>
+      <template lwc:if={hasRecords}>
+        <lightning-input
+          type="search"
+          label="Filter records"
+          value={filterText}
+          onchange={handleFilterChange}
+        ></lightning-input>
+
+        <ul class="record-list" aria-label="Filtered preview records">
+          <template for:each={filteredRecords} for:item="record" for:index="index">
+            <li key={record.id} class="record-list__item" data-index={index}>
+              <span class="record-list__title">{record.name}</span>
+              <lightning-badge label={record.stage}></lightning-badge>
+            </li>
+          </template>
+        </ul>
+      </template>
+
+      <template lwc:else>
+        <p class="empty-state">No records match the current filter.</p>
+      </template>
+
+      <footer slot="footer">
+        <lightning-button-group>
+          <lightning-button label="Refresh" variant="neutral" onclick={refresh}></lightning-button>
+          <lightning-button label="Publish" variant="brand" onclick={publish}></lightning-button>
+        </lightning-button-group>
+      </footer>
+    </div>
+  </lightning-card>
+</template>

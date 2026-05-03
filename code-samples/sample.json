@@ -1,0 +1,21 @@
+{
+  "name": "klang-theme-sample",
+  "private": true,
+  "version": "1.0.0",
+  "keywords": ["theme", "syntax", "preview"],
+  "theme": {
+    "type": "hcDark",
+    "accent": "#ff55c8",
+    "semanticHighlighting": true,
+    "metrics": {
+      "contrastRatio": 12.4,
+      "enabled": true,
+      "nullValue": null
+    }
+  },
+  "files": [
+    "sample.ts",
+    "sample.py",
+    "sample.html"
+  ]
+}

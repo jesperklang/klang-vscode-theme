@@ -1,0 +1,27 @@
+# YAML sample: anchors, aliases, arrays, maps, booleans, numbers, and multiline strings
+name: klang-theme-sample
+version: 1.0.0
+enabled: true
+accent: "#ff55c8"
+
+shared: &shared
+  retries: 3
+  timeoutMs: 1500
+  tags:
+    - theme
+    - preview
+    - syntax
+
+environments:
+  development:
+    <<: *shared
+    debug: true
+    url: http://localhost:3000
+  production:
+    <<: *shared
+    debug: false
+    url: https://example.com
+
+releaseNotes: |
+  Added samples for popular languages.
+  Check comments, strings, numbers, keywords, and punctuation.

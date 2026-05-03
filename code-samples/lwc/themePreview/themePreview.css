@@ -1,0 +1,34 @@
+/* LWC sample: host selector, custom properties, attribute selectors, and scoped classes */
+:host {
+  display: block;
+  --preview-accent-color: #ff55c8;
+  --preview-info-color: #00f0ff;
+}
+
+.preview {
+  border-left: 0.25rem solid var(--preview-accent-color);
+  background: color-mix(in srgb, var(--preview-accent-color), transparent 92%);
+}
+
+.preview[data-status="error"] {
+  border-left-color: #ff2e63;
+}
+
+.record-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.record-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.empty-state {
+  color: #706e6b;
+  font-style: italic;
+}
