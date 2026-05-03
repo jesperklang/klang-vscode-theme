@@ -2,7 +2,7 @@
   "name": "klang-theme",
   "displayName": "Klang Theme",
   "description": "A high contrast dark theme with neon pink accents.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "publisher": "jesper-klang",
   "author": {
     "name": "Jesper Klang",
@@ -45,9 +45,12 @@
   "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "devDependencies": {
+    "@types/node": "^24.0.0",
     "@vscode/vsce": "^3.7.1"
   },
   "scripts": {
+    "install-locally": "node ./scripts/install-locally.ts",
+    "install-locally:insider": "node ./scripts/install-locally.ts --insider",
     "vsix": "vsce package"
   }
 }
